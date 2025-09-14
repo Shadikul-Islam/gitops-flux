@@ -5,8 +5,10 @@ metadata:
   namespace: flux-system
 spec:
   interval: 1m
-  path: ./apps/nginx/base
+  path: ./cluster/apps/nginx/base
   prune: true
   sourceRef:
     kind: GitRepository
     name: flux-system
+  dependsOn:
+    - name: nginx-namespace
